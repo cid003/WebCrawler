@@ -27,5 +27,5 @@ The CSV results to scrape Instagram posts are as shown:
 ### Twitter
 | URL                                                      | Comments | Views | Likes | Date                    |
 |:-------------------------------------------------------- | -------- | ----- | ----- | ----------------------- |
-| https://twitter.com/BLKBOXapp/status/1286051479946702851 | N/A      | N/A   | 2     | 2:32 PM - Jul 22, 2020 |
-| https://twitter.com/BLKBOXapp/status/1273655517823541249 | N/A      | N/A   | 3     | 9:35 AM - Jun 18, 2020 |
+| https://twitter.com/BLKBOXapp/status/1286051479946702851 | N/A      | N/A   | 2     | 2:32 PM - Jul 22, 2020  |
+| https://twitter.com/BLKBOXapp/status/1273655517823541249 | N/A      | N/A   | 3     | 9:35 AM - Jun 18, 2020  |
