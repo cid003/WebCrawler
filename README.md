@@ -9,8 +9,7 @@ Dependencies required: Selenium, Chromedriver
 4. The resulting data will be saved in the appropriate directory as a CSV file.
 
 ## Expected Data Tables Per Script Execution
-This section will display expected CSV outputs for each respective webcrawler for  
-Instagram/Facebook/Twitter.
+This section will display expected CSV outputs for each respective webcrawler for Instagram/Facebook/Twitter.
 
 ### Instagram
 The CSV results to scrape Instagram posts are as shown:  
