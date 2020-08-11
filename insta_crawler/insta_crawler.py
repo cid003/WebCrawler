@@ -45,25 +45,21 @@ class InstaBot:
       # Sleep a bit before moving onto next url
       time.sleep(3)
     
-    # Zip up info and store into a list
-    self.zipped_data = zip(self.urls, self.comments, self.views, self.likes, self.dates)
-
+      
 
 # Populate url list
 urls = ['https://www.instagram.com/p/CB1XK-BH5ez/', 'https://www.instagram.com/p/B9y7pTAAW0n/',
         'https://www.instagram.com/p/CDuO-OHjeej/']
 
-# Run the bot
+#make csv
 test = InstaBot(urls)
-
-# Upload bot's zipped data into csv file
-# fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
-# filename = 'stats.csv'
-# with open(filename, 'w') as csvfile:
-#   csvwriter = csv.writer(csvfile)
-
-#   for data in test.zipped_data:
-#     csvwriter.writerow(fields)
-#     csvwriter.writerows(data)
-
 test.driver.close()
+fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
+filename = 'stats.csv'
+data = []
+for i in range(len(test.comments)):
+    data.append([test.urls[i],test.comments[i],test.views[i],test.likes[i],test.dates[i]])
+with open(filename, 'w') as csvfile:
+    csvwriter = csv.writer(csvfile)
+    csvwriter.writerow(fields)
+    csvwriter.writerows(data)
