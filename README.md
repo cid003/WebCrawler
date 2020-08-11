@@ -16,7 +16,7 @@ Instagram/Facebook/Twitter.
 The CSV results to scrape Instagram posts are as shown:  
 
 | URL                                      | Comments | Views | Likes | Date         |
-| ---------------------------------------- | -------- | ----- | ----- | ------------ |
+|:---------------------------------------- | -------- | ----- | ----- | ------------ |
 | https://www.instagram.com/p/CB1XK-BH5ez/ | 2        | 233   | 37    | Jun 24, 2020 |
 | https://www.instagram.com/p/B9y7pTAAW0n/ | 7        | 491   | 91    | Mar 16, 2020 |
 | https://www.instagram.com/p/CDuO-OHjeej/ | 3        | 96    | 14    | Aug 10, 2020 |
@@ -26,6 +26,6 @@ The CSV results to scrape Instagram posts are as shown:
 
 ### Twitter
 | URL                                                      | Comments | Views | Likes | Date                    |
-| -------------------------------------------------------- | -------- | ----- | ----- | ----------------------- |
+|:-------------------------------------------------------- | -------- | ----- | ----- | ----------------------- |
 | https://twitter.com/BLKBOXapp/status/1286051479946702851 | N/A      | N/A   | 2     | 2:32 PM � Jul 22, 2020 |
 | https://twitter.com/BLKBOXapp/status/1273655517823541249 | N/A      | N/A   | 3     | 9:35 AM � Jun 18, 2020 |
