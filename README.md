@@ -1,2 +1,4 @@
 # BLKBoxSpider
-Webcrawler for instagram post scraping
+Webcrawler for Instagram/Facebook/Twitter post scraping
+
+Dependencies required: Selenium, Chromedriver
