@@ -32,6 +32,7 @@ class InstaBot:
 
       # Get the number of likes for current post
       parent_view.click()
+      #self.driver.find_elements_by_xpath('//*[@id="react-root"]/section/main/div/div[1]/article/div[3]/section[2]/div/span')[0].click()
       parent_likes = self.driver.find_element_by_css_selector('div.vJRqr')
       likes = parent_likes.find_element_by_tag_name('span').text
       print('Likes: ' + str(likes))
@@ -46,24 +47,34 @@ class InstaBot:
       time.sleep(3)
     
     # Zip up info and store into a list
-    self.zipped_data = zip(self.urls, self.comments, self.views, self.likes, self.dates)
-
+    #self.zipped_data = zip(self.urls, self.comments, self.views, self.likes, self.dates)
+      
 
 # Populate url list
 urls = ['https://www.instagram.com/p/CB1XK-BH5ez/', 'https://www.instagram.com/p/B9y7pTAAW0n/',
         'https://www.instagram.com/p/CDuO-OHjeej/']
 
 # Run the bot
-test = InstaBot(urls)
+
 
 # Upload bot's zipped data into csv file
+# fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
+# filename = 'stats.csv'
+# with open(filename, 'w') as csvfile:
+#   csvwriter = csv.writer(csvfile)
+
+#   for data in test.zipped_data:
+#     csvwriter.writerow(fields)
+#     csvwriter.writerows(data)
+
+test = InstaBot(urls)
+test.driver.close()
 fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
 filename = 'stats.csv'
+data = []
+for i in range(len(test.comments)):
+    data.append([test.urls[i],test.comments[i],test.views[i],test.likes[i],test.dates[i]])
 with open(filename, 'w') as csvfile:
-  csvwriter = csv.writer(csvfile)
-
-  for data in test.zipped_data:
+    csvwriter = csv.writer(csvfile)
     csvwriter.writerow(fields)
     csvwriter.writerows(data)
-
-test.driver.close()
