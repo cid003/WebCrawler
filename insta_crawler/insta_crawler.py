@@ -57,13 +57,13 @@ urls = ['https://www.instagram.com/p/CB1XK-BH5ez/', 'https://www.instagram.com/p
 test = InstaBot(urls)
 
 # Upload bot's zipped data into csv file
-fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
-filename = 'stats.csv'
-with open(filename, 'w') as csvfile:
-  csvwriter = csv.writer(csvfile)
+# fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
+# filename = 'stats.csv'
+# with open(filename, 'w') as csvfile:
+#   csvwriter = csv.writer(csvfile)
 
-  for data in test.zipped_data:
-    csvwriter.writerow(fields)
-    csvwriter.writerows(data)
+#   for data in test.zipped_data:
+#     csvwriter.writerow(fields)
+#     csvwriter.writerows(data)
 
 test.driver.close()
