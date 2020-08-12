@@ -51,15 +51,20 @@ class InstaBot:
 urls = ['https://www.instagram.com/p/CB1XK-BH5ez/', 'https://www.instagram.com/p/B9y7pTAAW0n/',
         'https://www.instagram.com/p/CDuO-OHjeej/']
 
-#make csv
+# Run bot
 test = InstaBot(urls)
 test.driver.close()
+
+# Make CSV
+print('Generating CSV file...')
 fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
-filename = 'stats.csv'
+filename = 'instagram_stats.csv'
 data = []
 for i in range(len(test.comments)):
-    data.append([test.urls[i],test.comments[i],test.views[i],test.likes[i],test.dates[i]])
+    data.append([test.urls[i], test.comments[i], test.views[i], test.likes[i], test.dates[i]])
 with open(filename, 'w') as csvfile:
     csvwriter = csv.writer(csvfile)
     csvwriter.writerow(fields)
     csvwriter.writerows(data)
+
+print('Done!')

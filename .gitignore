@@ -1,2 +1,3 @@
 insta_crawler/chromedriver.exe
-insta_crawler/stats.csv
+insta_crawler/instagram_stats.csv
+twitter_crawler/twitter_stats.csv
