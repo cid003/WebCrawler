@@ -20,8 +20,6 @@ The CSV results from scraping Instagram posts are as shown:
 | https://www.instagram.com/p/B9y7pTAAW0n/ | 7        | 491   | 91    | Mar 16, 2020 |
 | https://www.instagram.com/p/CDuO-OHjeej/ | 3        | 96    | 14    | Aug 10, 2020 |
 
-
-
 The CSV results from scraping Instagram profiles are as shown:
 
 | URL                                                 | Posts    | Followers |
