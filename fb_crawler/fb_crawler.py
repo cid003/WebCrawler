@@ -57,7 +57,7 @@ urls = ['https://www.facebook.com/lovexstereo/videos/855000578361086/','https://
 test = InstaBot(urls)
 test.driver.close()
 fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
-filename = 'stats.csv'
+filename = 'fb_stats.csv'
 data = []
 for i in range(len(test.comments)):
     data.append([test.urls[i],test.comments[i],test.views[i],test.likes[i],test.dates[i]])

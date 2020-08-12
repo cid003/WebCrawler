@@ -43,7 +43,7 @@ test.driver.close()
 # MAKE CSV
 print('Generating CSV file...')
 fields = ['URL', 'Posts', 'Followers']
-filename = 'instagram_profile_stats.csv'
+filename = 'ig_profile_stats.csv'
 data = []
 for i in range(len(test.spanElement)): 
     data.append([test.urls[i], test.spanPosts[i], test.spanFollowers[i]])
