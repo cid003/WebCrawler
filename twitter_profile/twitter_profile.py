@@ -2,7 +2,7 @@ from selenium import webdriver
 import time
 import csv
 
-class InstaProfileBot:
+class TwitterProfileBot:
   def __init__(self, urls): # no need for user info
     self.driver = webdriver.Chrome()
     self.urls = urls
@@ -32,25 +32,25 @@ class InstaProfileBot:
       # Sleep a bit before moving onto next url
       time.sleep(3)
     
-# Populate url list, these are profile links
-urls = ['https://twitter.com/lovexstereo?lang=en', 'https://twitter.com/candyambulance?lang=en',
-'https://twitter.com/littlemanmusic?lang=en']
+# # Populate url list, these are profile links
+# urls = ['https://twitter.com/lovexstereo?lang=en', 'https://twitter.com/candyambulance?lang=en',
+# 'https://twitter.com/littlemanmusic?lang=en']
 
 
-# Run bot
-test = InstaProfileBot(urls)
-test.driver.close()
+# # Run bot
+# test = InstaProfileBot(urls)
+# test.driver.close()
 
-# MAKE CSV
-print('Generating CSV file...')
-fields = ['URL', 'Tweets', 'Followers']
-filename = 'twitter_profile_stats.csv'
-data = []
-for i in range(len(test.urls)): 
-     data.append([test.urls[i], test.spanTweets[i], test.spanFollowers[i]])
-     with open(filename, 'w') as csvfile:
-         csvwriter = csv.writer(csvfile)
-         csvwriter.writerow(fields)
-         csvwriter.writerows(data)
+# # MAKE CSV
+# print('Generating CSV file...')
+# fields = ['URL', 'Tweets', 'Followers']
+# filename = 'twitter_profile_stats.csv'
+# data = []
+# for i in range(len(test.urls)): 
+#      data.append([test.urls[i], test.spanTweets[i], test.spanFollowers[i]])
+#      with open(filename, 'w') as csvfile:
+#          csvwriter = csv.writer(csvfile)
+#          csvwriter.writerow(fields)
+#          csvwriter.writerows(data)
 
-print('Done!')
+# print('Done!')

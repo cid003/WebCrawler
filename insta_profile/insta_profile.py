@@ -32,24 +32,24 @@ class InstaProfileBot:
       # Sleep a bit before moving onto next url
       time.sleep(3)
     
-# Populate url list, these are profile links
-urls = ['https://www.instagram.com/lovexstereo/?hl=en', 'https://www.instagram.com/candyambulanceband/?hl=en',
-'https://www.instagram.com/spenceryenson/?hl=en']
+# # Populate url list, these are profile links
+# urls = ['https://www.instagram.com/lovexstereo/?hl=en', 'https://www.instagram.com/candyambulanceband/?hl=en',
+# 'https://www.instagram.com/spenceryenson/?hl=en']
 
-# Run bot
-test = InstaProfileBot(urls)
-test.driver.close()
+# # Run bot
+# test = InstaProfileBot(urls)
+# test.driver.close()
 
-# MAKE CSV
-print('Generating CSV file...')
-fields = ['URL', 'Posts', 'Followers']
-filename = 'ig_profile_stats.csv'
-data = []
-for i in range(len(test.spanElement)): 
-    data.append([test.urls[i], test.spanPosts[i], test.spanFollowers[i]])
-    with open(filename, 'w') as csvfile:
-        csvwriter = csv.writer(csvfile)
-        csvwriter.writerow(fields)
-        csvwriter.writerows(data)
+# # MAKE CSV
+# print('Generating CSV file...')
+# fields = ['URL', 'Posts', 'Followers']
+# filename = 'ig_profile_stats.csv'
+# data = []
+# for i in range(len(test.spanElement)): 
+#     data.append([test.urls[i], test.spanPosts[i], test.spanFollowers[i]])
+#     with open(filename, 'w') as csvfile:
+#         csvwriter = csv.writer(csvfile)
+#         csvwriter.writerow(fields)
+#         csvwriter.writerows(data)
 
-print('Done!')
+# print('Done!')

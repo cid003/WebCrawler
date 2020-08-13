@@ -3,7 +3,7 @@ import time
 import csv
 from selenium.common.exceptions import NoSuchElementException
 
-class InstaBot:
+class FacebookBot:
   def __init__(self, urls): # no need for user info
     self.driver = webdriver.Chrome()
     self.urls = urls
@@ -49,19 +49,19 @@ class InstaBot:
         # Sleep a bit before moving onto next url
         time.sleep(3)
 
-# Populate url list
-urls = ['https://www.facebook.com/lovexstereo/videos/855000578361086/','https://www.facebook.com/lovexstereo/videos/217040609601399/']
+# # Populate url list
+# urls = ['https://www.facebook.com/lovexstereo/videos/855000578361086/','https://www.facebook.com/lovexstereo/videos/217040609601399/']
 
 
-#make csv
-test = InstaBot(urls)
-test.driver.close()
-fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
-filename = 'fb_stats.csv'
-data = []
-for i in range(len(test.comments)):
-    data.append([test.urls[i],test.comments[i],test.views[i],test.likes[i],test.dates[i]])
-with open(filename, 'w') as csvfile:
-    csvwriter = csv.writer(csvfile)
-    csvwriter.writerow(fields)
-    csvwriter.writerows(data)
+# #make csv
+# test = InstaBot(urls)
+# test.driver.close()
+# fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
+# filename = 'fb_stats.csv'
+# data = []
+# for i in range(len(test.comments)):
+#     data.append([test.urls[i],test.comments[i],test.views[i],test.likes[i],test.dates[i]])
+# with open(filename, 'w') as csvfile:
+#     csvwriter = csv.writer(csvfile)
+#     csvwriter.writerow(fields)
+#     csvwriter.writerows(data)
