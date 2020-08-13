@@ -6,8 +6,9 @@ Dependencies required: Selenium, Chromedriver
 Follow these steps depending on which OS is being used to set up Chromedriver
 
 **BEFORE setting up Chromedriver you must have Chrome installed and know what version of Chrome you are using**
-You can figure this out by opening the menu on the top-right of your browser -> Help -> About Google Chrome
+You can figure this out by opening the menu on the top-right of your browser -> Help -> About Google Chrome  
 The version number can be found there. [Please download the correct Chromedriver for your version](https://chromedriver.chromium.org/downloads)
+(**Use the link only if you are a Windows user**)
 
 ### Windows
 1. Extract the Chromedriver.exe and save it somewhere that is appropriate for an application to be saved in;  
@@ -15,13 +16,11 @@ possibly in the local disk.
 2. Open control panel and navigate to (System and Security) -> (System) -> (Advanced System Settings) -> (Environment Variables)
 3. Under the system variables section, highlight 'Path' and click 'Edit' then click 'New'
 4. Figure out the full directory path of the Chromedriver.exe and provide that value as a new system variable path
-5. You are now able to run Chromedriver; open command prompt and enter the command `chromedriver`, a prompt will show if you properly  
-installed it.
+5. You are now able to run Chromedriver; open command prompt and enter the command `chromedriver`, a prompt will show if you properly installed it.
 
 ### Mac
 1. Open terminal and enter the command: `brew cask install chromedriver`
-2. You are now able to run Chromedriver; open command prompt and enter the command `chromedriver`, a prompt will show if you properly  
-installed it.
+2. You are now able to run Chromedriver; open command prompt and enter the command `chromedriver`, a prompt will show if you properly installed it.
 
 ## How To Run Appropriate Crawlers
 1. Change directory within appropriate webcrawler.
