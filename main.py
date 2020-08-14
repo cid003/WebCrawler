@@ -10,28 +10,33 @@ import csv
 # load the list of urls here, 5 separate .txt files => 5 CSV files
 # get lists of posts from facebook, twitter, and instagram 
 # get lists of profiles from facebook, twitter, and instagram
+
 def readLinks(urls):
-	f = open(urls, "r")
-	f1 = f.readlines()
-	result = []
-	for x in f1:
-		result.append(str(x))
-	f.close()
-	return result
-	
+    try:
+        f = open(urls, "r")
+        f1 = f.readlines()
+        result = []
+        for x in f1:
+            result.append(str(x))
+    except:
+        print("Something went wrong with opening/reading the .txt file")
+    else:
+        f.close() # else happens if no error occurred
+        return result       
+
 IGPostURLS = readLinks('igpost_urls.txt')
 IGProfileURLS = readLinks('igprofile_urls.txt')
 FacebookURLS = readLinks('fbpost_urls.txt')
 TwitterPostURLS = readLinks('twitterpost_urls.txt')
 TwitterProfileURLS = readLinks('twitterprofile_urls.txt')
 
-# to-do: call imported scripts here
+# call imported scripts here
 # Scrape IG Posts
 IGPostBot = InstaBot(IGPostURLS)
 IGPostBot.driver.close()
 
 # Make CSV
-print('Generating CSV file for IG posts...')
+print('\nGenerating CSV file for IG posts...')
 fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
 filename = 'instagram_stats.csv'
 data = []
@@ -48,7 +53,7 @@ IGProfileBot = InstaProfileBot(IGProfileURLS)
 IGProfileBot.driver.close()
 
 # Make CSV
-print('Generating CSV file for IG profiles...')
+print('\nGenerating CSV file for IG profiles...')
 fields = ['URL', 'Posts', 'Followers']
 filename = 'ig_profile_stats.csv'
 data = []
@@ -65,7 +70,7 @@ FBPostBot = FacebookBot(FacebookURLS)
 FBPostBot.driver.close()
 
 # Make CSV
-print('Generating CSV file for FB posts...')
+print('\nGenerating CSV file for FB posts...')
 fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
 filename = 'fb_stats.csv'
 data = []
@@ -80,8 +85,9 @@ print('Generated FB post stats!')
 # Scrape Twitter Posts
 TwitterPostBot = TwitterBot(TwitterPostURLS)
 TwitterPostBot.driver.close()
+
 # Make CSV
-print('Generating CSV file for Twitter posts...')
+print('\nGenerating CSV file for Twitter posts...')
 fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
 filename = 'twitter_stats.csv'
 data = []
@@ -96,9 +102,9 @@ print('Generated Twitter post stats!')
 # Scrape Twitter Profiles
 TwProfileBot = TwitterProfileBot(TwitterProfileURLS)
 TwProfileBot.driver.close()
-# Make CSV
 
-print('Generating CSV file for Twitter profiles...')
+# Make CSV
+print('\nGenerating CSV file for Twitter profiles...')
 fields = ['URL', 'Tweets', 'Followers']
 filename = 'twitter_profile_stats.csv'
 data = []
