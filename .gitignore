@@ -4,3 +4,13 @@ twitter_crawler/twitter_stats.csv
 fb_crawler/fb_stats.csv
 insta_profile/ig_profile_stats.csv
 twitter_profile/twitter_profile_stats.csv
+instagram_stats.csv
+twitter_stats.csv
+fb_stats.csv
+ig_profile_stats.csv
+twitter_profile_stats.csv
+fb_crawler/__pycache__/
+insta_crawler/__pycache__/
+insta_profile/__pycache__/
+twitter_crawler/__pycache__/
+twitter_profile/__pycache__/
