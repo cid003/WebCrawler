@@ -40,23 +40,23 @@ class TwitterBot:
 
     # Zip up info and store into a list
 
-# Populate url list
-urls = ['https://twitter.com/BLKBOXapp/status/1286051479946702851', 'https://twitter.com/BLKBOXapp/status/1273655517823541249']
+# # Populate url list
+# urls = ['https://twitter.com/BLKBOXapp/status/1286051479946702851', 'https://twitter.com/BLKBOXapp/status/1273655517823541249']
 
-# Run bot
-test = TwitterBot(urls)
-test.driver.close()
+# # Run bot
+# test = TwitterBot(urls)
+# test.driver.close()
 
-# Make CSV
-print('Generating CSV file...')
-fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
-filename = 'twitter_stats.csv'
-data = []
-for i in range(len(test.urls)):
-    data.append([test.urls[i], 'N/A', 'N/A', test.likes[i], test.dates[i]])
-with open(filename, 'w') as csvfile:
-    csvwriter = csv.writer(csvfile)
-    csvwriter.writerow(fields)
-    csvwriter.writerows(data)
+# # Make CSV
+# print('Generating CSV file...')
+# fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
+# filename = 'twitter_stats.csv'
+# data = []
+# for i in range(len(test.urls)):
+#     data.append([test.urls[i], 'N/A', 'N/A', test.likes[i], test.dates[i]])
+# with open(filename, 'w') as csvfile:
+#     csvwriter = csv.writer(csvfile)
+#     csvwriter.writerow(fields)
+#     csvwriter.writerows(data)
 
-print('Done!')
+# print('Done!')
