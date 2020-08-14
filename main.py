@@ -10,16 +10,26 @@ import csv
 # load the list of urls here, 5 separate .txt files => 5 CSV files
 # get lists of posts from facebook, twitter, and instagram 
 # get lists of profiles from facebook, twitter, and instagram
-IGPostURLS = []
-IGProfileURLS = []
-FacebookURLS = []
-TwitterPostURLS = []
-TwitterProfileURLS = []
+def readLinks(urls):
+	f = open(urls, "r")
+	f1 = f.readlines()
+	result = []
+	for x in f1:
+		result.append(str(x))
+	f.close()
+	return result
+	
+IGPostURLS = readLinks('igpost_urls.txt')
+IGProfileURLS = readLinks('igprofile_urls.txt')
+FacebookURLS = readLinks('fbpost_urls.txt')
+TwitterPostURLS = readLinks('twitterpost_urls.txt')
+TwitterProfileURLS = readLinks('twitterprofile_urls.txt')
 
 # to-do: call imported scripts here
 # Scrape IG Posts
 IGPostBot = InstaBot(IGPostURLS)
 IGPostBot.driver.close()
+
 # Make CSV
 print('Generating CSV file for IG posts...')
 fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
@@ -36,6 +46,7 @@ print('Generated IG post stats!')
 # Scrape IG Profiles
 IGProfileBot = InstaProfileBot(IGProfileURLS)
 IGProfileBot.driver.close()
+
 # Make CSV
 print('Generating CSV file for IG profiles...')
 fields = ['URL', 'Posts', 'Followers']
@@ -52,6 +63,7 @@ print('Generated IG profile stats!')
 # Scrape FB Posts
 FBPostBot = FacebookBot(FacebookURLS)
 FBPostBot.driver.close()
+
 # Make CSV
 print('Generating CSV file for FB posts...')
 fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
@@ -85,6 +97,7 @@ print('Generated Twitter post stats!')
 TwProfileBot = TwitterProfileBot(TwitterProfileURLS)
 TwProfileBot.driver.close()
 # Make CSV
+
 print('Generating CSV file for Twitter profiles...')
 fields = ['URL', 'Tweets', 'Followers']
 filename = 'twitter_profile_stats.csv'
