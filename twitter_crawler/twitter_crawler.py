@@ -32,8 +32,8 @@ class TwitterBot:
 
       # Get the date of current post
       date = self.driver.find_element_by_xpath('/html/body/div/div/div/div[2]/main/div/div/div/div/div/div[2]/div/section/div/div/div[1]/div/div/article/div/div/div/div[3]/div[3]/div/div[1]/span[1]/span').text
-      print('Date posted: ' + str(date))
-      self.dates.append(date)
+      print('Date posted: ' + date.split('·')[1])
+      self.dates.append(date.split('·')[1])
 
       # Sleep a bit before moving onto next url
       time.sleep(3)
