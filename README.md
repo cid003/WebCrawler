@@ -22,11 +22,15 @@ possibly in the local disk.
 1. Open terminal and enter the command: `brew cask install chromedriver`
 2. You are now able to run Chromedriver; open command prompt and enter the command `chromedriver`, a prompt will show if you properly installed it.
 
-## How To Run Appropriate Crawlers
-1. Change directory within appropriate webcrawler.
-2. Modify the urls list within the scripts with posts that are going to be scraped.
-3. Run the command: `py <insta/facebook/twitter>_crawler.py`
-4. The resulting data will be saved in the appropriate directory as a CSV file.
+## How to run the webcrawler
+1. Update the txt files of all sites to crawl.
+2. Under the assumption that the user is on a MacOS, navigate to the text files by going into the `dist` folder.
+3. Right click on main to open file options, click Show Package Contents. 
+4. Navigate to `Contents`, then `Resources`.
+5. From here, update **ALL** *.txt files that are seen within this folder with the urls that are appropriate to the
+text file's name. e.g. fbpost_urls.txt should have urls that are ONLY Facebook posts.
+6. Once the text files are updated. Navigate out of the `Resources` folder and access the `MacOS` folder.
+7. Run the `main` Unix executable.
 
 ## Expected Data Tables Per Script Execution
 This section will display expected CSV outputs for each respective webcrawler for Instagram/Facebook/Twitter.
@@ -59,10 +63,10 @@ The CSV results from scraping Facebook posts are as shown:
 ### Twitter
 The CSV results from scraping Twitter posts are as shown:
 
-| URL                                                      | Comments | Views | Likes | Date                    |
-|:-------------------------------------------------------- | -------- | ----- | ----- | ----------------------- |
-| https://twitter.com/BLKBOXapp/status/1286051479946702851 | N/A      | N/A   | 2     | 2:32 PM - Jul 22, 2020  |
-| https://twitter.com/BLKBOXapp/status/1273655517823541249 | N/A      | N/A   | 3     | 9:35 AM - Jun 18, 2020  |
+| URL                                                      | Comments | Views | Likes | Date           |
+|:-------------------------------------------------------- | -------- | ----- | ----- | -------------- |
+| https://twitter.com/BLKBOXapp/status/1286051479946702851 | N/A      | N/A   | 2     |  Jul 22, 2020  |
+| https://twitter.com/BLKBOXapp/status/1273655517823541249 | N/A      | N/A   | 3     |  Jun 18, 2020  |
 
 The CSV results from scraping Twitter profiles are as shown:
 
