@@ -14,3 +14,5 @@ insta_crawler/__pycache__/
 insta_profile/__pycache__/
 twitter_crawler/__pycache__/
 twitter_profile/__pycache__/
+.eggs/
+.DS_Store
