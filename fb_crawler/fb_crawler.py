@@ -25,20 +25,22 @@ class FacebookBot:
         print(comment)
         
         # Get the date of current post
-        date = self.driver.find_element_by_xpath('/html/body/div[1]/div[3]/div[1]/div/div[3]/div/div[1]/div[2]/div/div/div/div/div/div[1]/div/div[2]/div[1]/div[3]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/span[1]/span/a/abbr/span').text
-        print(date)
-        self.dates.append(date)
+        date = self.driver.find_elements_by_class_name('timestampContent')
+        a = [i.text for i in date]
+        print(a[0])
+        self.dates.append(a[0])
 
         # Get the number of likes for current post
-        likes=self.driver.find_element_by_xpath('/html/body/div[1]/div[3]/div[1]/div/div[3]/div/div[1]/div[2]/div/div/div/div/div/div[1]/div/div[2]/div[2]/form/div/div[2]/div[1]/div/div[1]/a/span[2]/span/span').text
+        likes = self.driver.find_element_by_xpath('/html/body/div[1]/div[3]/div[1]/div/div[3]/div/div[1]/div[2]/div/div/div/div/div/div[1]/div/div[2]/div[2]/form/div/div[2]/div[1]/div/div[1]/a/span[2]/span/span').text
         print(likes)
         self.likes.append(likes)
         
         # get the number of views
-        self.driver.find_elements_by_xpath('/html/body/div[1]/div[3]/div[1]/div/div[3]/div/div[1]/div[2]/div/div/div/div/div/div[1]/div/div[2]/div[1]/div[3]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/span[1]/span/a/abbr/span')[0].click()
+        temp = self.driver.find_elements_by_class_name('timestampContent')
+        temp[0].click()
+
         # can change based on internet condition
         time.sleep(5)
-        #view=self.driver.find_element_by_xpath('/html/body/div[1]/div[5]/div[2]/div/div/div/div[1]/div[2]/div[2]/div[2]/div/div/span[1]')
         view = self.driver.find_elements_by_class_name('fcg')
         a = [i.text for i in view]
         singleview = str(a[7]).split(' ')[0]
@@ -54,7 +56,7 @@ class FacebookBot:
 
 
 # #make csv
-# test = InstaBot(urls)
+# test = FacebookBot(urls)
 # test.driver.close()
 # fields = ['URL', 'Comments', 'Views', 'Likes', 'Date']
 # filename = 'fb_stats.csv'
